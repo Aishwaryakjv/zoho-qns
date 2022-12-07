@@ -1,0 +1,41 @@
+A strings is passed as the input. The program must reverse the order of the words in the string and print them as the output.
+Input Format:
+The first line will contain 5.
+Output Format:
+The first line will contain the words in the strings in the reverse order.
+Boundary Conditions:
+Length of S is from 5 to 100.
+Example lnput/Output 1:
+Input:
+Today is Friday
+Output:
+Friday is Today
+Example lnput/Output 2:
+Input:
+five six ten eleven
+Output:
+eleven ten six five
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100]="today is friday";
+    for(int i=strlen(str);i>=0;i--)
+    {
+        if(str[i]==' '||i==0){
+            int j=i+1;
+            if(i==0)
+            j=0;
+            while(str[j]!='\0'){
+                printf("%c",str[j]);               
+                j++;
+                if(str[j]==' ')
+                break;
+            }
+            printf(" ");
+        }
+    }
+    return 0;
+}
