@@ -46,3 +46,29 @@ int main()
 
     return 0;
 }
+
+
+using absolute function:
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i,rem,x;
+    char ans[]="yes";
+    printf("enter the number: ");
+    scanf("%d",&n);
+    while(n>10)
+    {
+        rem=n%10;
+        n=n/10;
+        x=n%10;
+        if(abs(rem-x)!=1){
+        strcpy(ans,"no");
+        break;
+        }
+    }
+    printf("%s",ans);
+
+    return 0;
+}
