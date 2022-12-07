@@ -1,0 +1,48 @@
+Given a number N, the program must print if N is a step number or not. (A step number is a number which
+has a digit which is either 1 more or 1 less than the previous digit).
+Input Format:
+The first line contains N.
+Output Format:
+The first line contains yes or no
+Boundary Conditions:
+10 <= N <= 99999999
+Example lnput/Output 1:
+Input:
+1212343
+Output:
+yes
+Example lnput/Output 2:
+
+
+
+Input:
+342345
+Output:
+no
+Explanation:
+The difference between 2 and 4 is NOT 1
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int n,i,rem,x;
+    char ans[]="yes";
+    printf("enter the number: ");
+    scanf("%d",&n);
+    while(n>10)
+    {
+        rem=n%10;
+        n=n/10;
+        x=n%10;
+        // printf("%d",rem);
+        // printf("%d",x);
+        if(rem+1!=x && rem-1!=x){
+        strcpy(ans,"no");
+        break;
+        }
+    }
+    printf("%s",ans);
+
+    return 0;
+}
